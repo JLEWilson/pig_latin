@@ -1,6 +1,5 @@
 function noInputtedWords() {
   for (let i=0; i < arguments.length; i++) {
-    console.log(arguments[i]);
     if (arguments[i].trim().length === 0) {
       return true;
     }
@@ -8,6 +7,15 @@ function noInputtedWords() {
   return false;
 }
 
+function startsVowel(word) {
+  let letterArray = word.split('');
+  if (letterArray[0].match(/[aeiou]/i)) {
+    return true;
+  }
+  return false;
+}
+
+/*
 function startsVowel(word) {
   const vowelArray = ["a", "e", "i", "o", "u"];
   let letterArray = word.split('');
@@ -18,11 +26,15 @@ function startsVowel(word) {
   };
   return false;
 }
+*/
 
 function startsConsonant(word){
   let letterArray = word.split('');
   for (let i=0; i < letterArray.length; i++) {
     if (!startsVowel(letterArray.join(''))) {
+      if (i !== 0 && letterArray[0].toLowerCase() === "y") {
+        break;
+      }
       letterArray.push(letterArray[0]);
       letterArray.shift();
     } else {

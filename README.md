@@ -71,6 +71,10 @@ Test: "If q is one of the letters being moved it will also take the u"
 Code: pigLatin("squeal");
 Expected Output: "ealsquay"
 
+Test: "If the word begins with Y treat the Y as a consonant"
+Code: pigLatin("yonder");
+Expected Output: "onderyay"
+
 Test: "If there is punctuation do not count it as part of a word"
 Code: pigLatin(" 'squeal' ");
 Expected Output: " 'ealsquay' "
