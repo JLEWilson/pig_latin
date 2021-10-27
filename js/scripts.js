@@ -36,15 +36,14 @@ function startsConsonant(word){
   return letterArray.join('');
 }
 
-function pigLatin(word){
-  if(noInputtedWords(word)){
+function pigLatin(input){
+  if(noInputtedWords(input)){
     return "";
   }
-  let wordArray = word.split(" ");
+  let wordArray = input.split(" ");
   let outputArray = [];
   
   wordArray.forEach(function(word) {
-    let elementArray = word.split()
     if (startsVowel(word)) {
       outputArray.push(word + "way");
     } else {
